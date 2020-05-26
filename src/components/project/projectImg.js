@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectImg = ({ imgs, link, github }) => {
   return (
     <Container
       style={{
-        backgroundImage: `url(${imgs})`
+        backgroundImage: `url(${imgs})`,
       }}
     >
       {github !== "" ? (
@@ -15,7 +18,7 @@ const ProjectImg = ({ imgs, link, github }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="../../../assets/external-link.png" alt="github" />
+          <FontAwesomeIcon icon={faGithub} />
         </a>
       ) : null}
       {link !== "" ? (
@@ -25,7 +28,7 @@ const ProjectImg = ({ imgs, link, github }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="../../../assets/external-link.png" alt="External link!" />
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
         </a>
       ) : null}
     </Container>

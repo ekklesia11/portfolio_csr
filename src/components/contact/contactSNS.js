@@ -15,10 +15,14 @@ const ContactSNS = () => {
   return (
     <>
       <div
-        onMouseOver={() => hoverOnBlog("https://youwaytogo.tistory.com/")}
+        onMouseOver={() => hoverOnBlog("https://blog.chanhyun.org/")}
         onMouseOut={() => hoverOnBlog()}
       >
-        <a href="#" target="_blank">
+        <a
+          href="https://blog.chanhyun.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {blog}
         </a>
       </div>
@@ -27,7 +31,11 @@ const ContactSNS = () => {
         onMouseOut={() => hoverOnSNS()}
       >
         <span>
-          <a href="https://instagram.com/d_paac/" target="_blank">
+          <a
+            href="https://instagram.com/d_paac/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {sns}
           </a>
         </span>

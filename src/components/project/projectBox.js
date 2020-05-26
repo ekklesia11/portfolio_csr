@@ -5,6 +5,11 @@ import ProjectDetail from "./projectDetail";
 import ProjectImg from "./projectImg";
 import Navigation from "./navigation/navigation";
 
+import project1 from "../../assets/project1.png";
+import project2 from "../../assets/project2.png";
+import secondhand from "../../assets/secondhand.png";
+import homepage from "../../assets/homepage.jpg";
+
 const ProjectBox = () => {
   const [page, setPage] = useState(0);
   const [imgPage, setImgPage] = useState(0);
@@ -26,9 +31,7 @@ const ProjectBox = () => {
         "#AWS EC2",
         "#Route53",
       ],
-      images: [
-        "https://images.unsplash.com/photo-1575314027842-c33656c1f3dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      ],
+      images: [homepage],
       github: "",
       link: "https://bbegi.com/",
     },
@@ -66,7 +69,7 @@ const ProjectBox = () => {
         "선택가격범위 내 브랜드/모델 검색페이지 구현 및 월/일 데이터기반 간략한 그래프 구현",
       ],
       stacks: ["#Python3", "#Django", "#KoNLPy", "#MySQL", "#React Native"],
-      images: ["../../assets/project2.png", "../../assets/secondhand.png"],
+      images: [project2, secondhand],
       github: "https://github.com/ekklesia11/secondhand-server-repo",
       link: "",
     },
@@ -86,7 +89,7 @@ const ProjectBox = () => {
         "#MongoDB",
         "#React",
       ],
-      images: ["../../assets/project1.png"],
+      images: [project1],
       github: "https://github.com/ekklesia11/secondhand-server-repo",
       link: "",
     },

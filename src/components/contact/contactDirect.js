@@ -18,7 +18,11 @@ const ContactDirect = () => {
         onMouseOver={() => hoverOnEmail("happyyquokka@gmail.com")}
         onMouseOut={() => hoverOnEmail()}
       >
-        <a href="mailto:happyyquokka@gmail.com" target="_blank">
+        <a
+          href="mailto:happyyquokka@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {email}
         </a>
       </div>

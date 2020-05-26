@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import Menu from "./menu";
 
@@ -9,7 +11,8 @@ const MenuTab = () => {
   const menus = [
     { name: "ABOUT", link: "about" },
     { name: "PROJECTS", link: "project" },
-    { name: "CONTACT", link: "contact" }
+    { name: "CONTACT", link: "contact" },
+    { name: "BLOG", link: "blog" },
   ];
 
   const toggleMenu = () => setMenuToggle(!menuToggle);
@@ -17,14 +20,10 @@ const MenuTab = () => {
   return (
     <Container>
       <div className="menu-btn">
-        <img
-          src="../../assets/hamburger-menu.png"
-          alt="link"
-          onClick={toggleMenu}
-        />
+        <FontAwesomeIcon icon={faBars} onClick={toggleMenu} />
       </div>
       {menuToggle
-        ? menus.map(menu => (
+        ? menus.map((menu) => (
             <Menu key={menu.name} menu={menu} toggleMenu={toggleMenu} />
           ))
         : null}
@@ -33,7 +32,7 @@ const MenuTab = () => {
 };
 
 const Container = styled.div`
-  color: ${props => props.theme.color.text};
+  color: ${(props) => props.theme.color.text};
   position: fixed;
   top: 0;
   right: 0;
@@ -42,7 +41,7 @@ const Container = styled.div`
   font-size: 3vw;
 
   .menu-btn {
-    margin: 2vw 2vw 0;
+    margin: 2vw 3vw 0;
     cursor: pointer;
   }
 

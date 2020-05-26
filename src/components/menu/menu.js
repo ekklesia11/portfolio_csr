@@ -1,19 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import { Link as RouteLink } from "react-router-dom";
 import { Link } from "react-scroll";
 
 const Menu = ({ menu, toggleMenu }) => {
   return (
     <Container>
-      <StyledLink
-        to={menu.link}
-        smooth={true}
-        duration={500}
-        onClick={toggleMenu}
-      >
-        {menu.name}
-      </StyledLink>
+      {menu.name === "BLOG" ? (
+        <a
+          href="https://blog.chanhyun.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "#fff" }}
+        >
+          {menu.name}
+        </a>
+      ) : (
+        <StyledLink
+          to={menu.link}
+          smooth={true}
+          duration={500}
+          onClick={toggleMenu}
+        >
+          {menu.name}
+        </StyledLink>
+      )}
     </Container>
   );
 };
