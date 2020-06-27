@@ -9,6 +9,7 @@ import project1 from "../../assets/project1.png";
 import project2 from "../../assets/project2.png";
 import secondhand from "../../assets/secondhand.png";
 import homepage from "../../assets/homepage.jpg";
+import tabata from "../../assets/tabata-timer.jpg";
 
 const ProjectBox = () => {
   const [page, setPage] = useState(0);
@@ -16,7 +17,24 @@ const ProjectBox = () => {
 
   const project = [
     {
-      title: "대형폐기물 수거 중개서비스 홈페이지",
+      title: "타바타 운동 타이머",
+      description: "고강도 인터벌 운동을 위해 제작된 인터벌 전용 타이머입니다.",
+      roles: [
+        "React 및 pure javascript function 으로 구성된 타이머",
+        "Basic static webapp 구현",
+      ],
+      stacks: [
+        "#React",
+        "#Javascript",
+        "#AWS S3",
+        "#Route53",
+      ],
+      images: [tabata],
+      github: "",
+      link: "http://timer.talab.pro",
+    },
+    {
+      title: "서비스 홈페이지",
       description: "서비스 소개 및 제휴, 고객을 위한 랜딩 페이지입니다.",
       roles: [
         "React Server Side Rendering 및 적응형 홈페이지 구현",
@@ -33,10 +51,10 @@ const ProjectBox = () => {
       ],
       images: [homepage],
       github: "",
-      link: "https://bbegi.com/",
+      link: "https://gatda.com/",
     },
     {
-      title: "대형폐기물 수거 중개서비스 어드민 페이지",
+      title: "서비스 어드민 페이지",
       description: "서비스의 운영 관리를 위한 권한별 어드민 페이지입니다.",
       roles: [
         "React Client Side Rendering, AWS S3 기반 Static 웹 사이트 구현",
