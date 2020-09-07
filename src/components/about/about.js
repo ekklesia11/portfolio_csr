@@ -4,7 +4,7 @@ import styled from "styled-components";
 import main from "../../assets/main.jpg";
 import programming from "../../assets/programming.png";
 import server from "../../assets/server.svg";
-import layout from "../../assets/layout.svg";
+import client from "../../assets/client.svg";
 
 const About = () => {
   return (
@@ -30,8 +30,8 @@ const About = () => {
         </p>
       </div>
       <div className="details">
+        <img src={client} alt="" className="client" />
         <img src={server} alt="" className="server" />
-        <img src={layout} alt="" className="client" />
       </div>
     </Container>
   );
@@ -110,14 +110,12 @@ const Container = styled.div`
     span {
       word-wrap: break-word;
     }
+  }
 
-    .details {
-    }
-
+  .details {
     .server,
     .client {
-      width: 10%;
-      border: 1px solid red;
+      width: 60px;
     }
   }
 `;
