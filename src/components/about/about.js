@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 import main from "../../assets/main.jpg";
 import programming from "../../assets/programming.png";
-import server from "../../assets/server.svg";
-import client from "../../assets/client.svg";
+// import server from "../../assets/server.svg";
+// import client from "../../assets/client.svg";
+
+import Description from "./description";
 
 const About = () => {
   return (
@@ -17,7 +19,7 @@ const About = () => {
         <div className="cartoon-img" />
       </div>
       <div className="programming-img" />
-      <div className="description">
+      {/* <div className="description">
         <p>
           <h4>Hi, I'm Daniel. Glad to meet you.</h4>
           <span>
@@ -28,11 +30,25 @@ const About = () => {
             at all time.
           </span>
         </p>
-      </div>
-      <div className="details">
-        <img src={client} alt="" className="client" />
-        <img src={server} alt="" className="server" />
-      </div>
+        <div className="details">
+          <div className="detail detail-1">
+            <img src={client} alt="" className="client" />
+            <div className="detail-text">
+              <strong>Front-end</strong>
+              <div>For client side coding</div>
+            </div>
+          </div>
+          <div className="vertical-line" />
+          <div className="detail detail-2">
+            <img src={server} alt="" className="server" />
+            <div className="detail-text">
+              <strong>Back-end</strong>
+              <div>For server side coding</div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <Description />
     </Container>
   );
 };
@@ -42,19 +58,18 @@ const Container = styled.div`
   font-size: 2rem;
   text-align: center;
   margin-top: 180px;
-  font-weight: 100;
 
   p {
+    font-weight: 100;
     margin: 0;
-  }
 
-  span {
-    font-size: 1.2rem;
-  }
+    span {
+      font-size: 1.2rem;
+    }
 
-  h3,
-  h4 {
-    margin: 0 0 16px;
+    h3 {
+      margin: 0 0 16px;
+    }
   }
 
   .cartoon-img {
@@ -92,19 +107,28 @@ const Container = styled.div`
     background-position: center left;
     margin: 0 auto 8px;
   }
-
+  /* 
   .description {
     width: 100%;
     height: 320px;
-    background-color: ${(props) => props.theme.color.main};
+    background-color: ${(
+    props
+  ) =>
+    props.theme.color
+      .main};
     padding: 84px 0;
+    margin-bottom: 500px;
 
     p {
       margin: 0 auto;
       text-align: center;
       width: 58%;
       line-height: 2rem;
-      color: ${(props) => props.theme.color.textInverse};
+      color: ${(
+    props
+  ) =>
+    props.theme.color
+      .textInverse};
     }
 
     span {
@@ -113,11 +137,49 @@ const Container = styled.div`
   }
 
   .details {
+    margin: 84px auto 0;
+    display: flex;
+    justify-content: center;
+
+    .detail {
+      background-color: ${(
+    props
+  ) =>
+    props.theme.color
+      .background};
+      padding: 36px 24px;
+    }
+
+    .vertical-line {
+      border-right: 1px solid #dfe4ea;
+    }
+
+    .detail-text {
+      font-size: 1.2rem;
+      font-weight: 100;
+
+      div {
+        margin: 24px auto;
+      }
+    }
+
+    .detail-1 {
+      border-radius: 12px 0 0 12px;
+      border: 1px solid #dfe4ea;
+      border-right: none;
+    }
+
+    .detail-2 {
+      border-radius: 0 12px 12px 0;
+      border: 1px solid #dfe4ea;
+      border-left: none;
+    }
+
     .server,
     .client {
       width: 60px;
     }
-  }
+  } */
 `;
 
 export default About;
