@@ -47,9 +47,14 @@ const Description = () => {
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.color.main};
+  background-image: linear-gradient(
+    to top right,
+    rgba(46, 213, 160, 1),
+    ${(props) => props.theme.color.main}
+  );
   font-size: 2rem;
   font-weight: 100;
-  height: 450px;
+  height: 455px;
   padding-top: 84px;
   margin-bottom: 400px;
 
@@ -76,6 +81,8 @@ const Container = styled.div`
     justify-content: center;
     color: ${(props) => props.theme.color.text};
     width: 70%;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px #dfe4ea;
 
     .detail {
       background-color: ${(props) => props.theme.color.background};
