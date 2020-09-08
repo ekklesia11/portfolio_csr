@@ -16,6 +16,10 @@ const ContactBox = () => {
 
   return (
     <Container>
+      <div className="mail">
+        <div>함께 프로젝트를 시작해볼까요?</div>
+        <button>메일 보내기</button>
+      </div>
       <div className="word">It always seems impossible until it's done.</div>
       <div className="info">
         {contact.map((data) => (
@@ -45,10 +49,27 @@ const ContactBox = () => {
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.color.main};
+  background-image: linear-gradient(
+    to top left,
+    rgba(46, 213, 160, 1),
+    ${(props) => props.theme.color.main}
+  );
   color: ${(props) => props.theme.color.textInverse};
-  padding: 96px 0;
+  padding: 16px 0 96px;
   text-align: center;
   font-weight: 200;
+
+  .mail {
+    font-size: 1.5rem;
+    background-color: ${(props) => props.theme.color.text};
+    padding: 56px 0;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    top: -70px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 6px rgba(47, 53, 66, 0.4);
+  }
 
   .word {
     font-size: 1.5rem;
@@ -74,6 +95,12 @@ const Container = styled.div`
       justify-content: center;
       align-items: center;
       margin: 24px;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: ${(props) => props.theme.color.background};
+        box-shadow: 0 0 8px ${(props) => props.theme.color.background};
+      }
     }
   }
 `;
