@@ -150,7 +150,7 @@ const Container = styled.div`
   width: 80%;
   margin-bottom: 50px;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 96px;
 
   p {
     font-size: 1.2rem;
