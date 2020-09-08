@@ -9,7 +9,7 @@ const Description = () => {
     kr: {
       greeting: "반갑습니다, 다니엘 입니다.",
       describe:
-        "개발자로써의 삶을 시작한 이후로 다양한 서비스와 프로젝트, 그리고 좋은 결과를 만들어내기 위해 재능있는 사람들과 함께 했습니다. 늘 긍정적이고, 호기심 가득하며, 끊임없이 성장하고 발전하기를 힘쓰는 개발자 입니다.",
+        "개발자로써의 삶을 시작한 이후로 다양한 서비스와 프로젝트, 그리고 좋은 결과를 만들어내기 위해 재능있는 사람들과 함께 했습니다. 늘 긍정적이고, 호기심 가득하며, 끊임없이 성장하고 발전하기를 힘쓰는 개발자 입니다. 지금도 넘치는 아이디어로 시도하고 도전하기를 즐기고 있습니다. 사실 낯을 많이 가리지만, 친해지면 재밌습니다.",
     },
     en: {
       greeting: "Hi, I'm Daniel. Glad to meet you.",
@@ -22,7 +22,8 @@ const Description = () => {
     kr: [
       {
         position: "프론트엔드",
-        describe: "클라이언트를 위한 개발",
+        describe:
+          "기획과 디자인을 시작으로 클라이언트의, 클라이언트에 의한, 클라이언트를 위한 프론트엔드를 개발합니다.",
         stack: ["JavaScript(ES6+)", "React", "React-Native", "HTML", "CSS"],
         img: client,
       },
@@ -92,9 +93,13 @@ const Description = () => {
           <img src={data.img} alt="" className="client" />
           <div className="detail-text">
             <strong>{data.position}</strong>
-            <div>{data.describe}</div>
+            <div className="description">{data.describe}</div>
             <div className="title">{language ? "stacks" : "기술스택"}:</div>
-            <div>{data.stack.join(", ")}</div>
+            <div>
+              {data.stack.map((stack) => (
+                <div key={stack}>{stack}</div>
+              ))}
+            </div>
           </div>
         </div>
       )
@@ -120,7 +125,7 @@ const Container = styled.div`
   font-weight: 100;
   height: 455px;
   padding-top: 84px;
-  margin-bottom: 240px;
+  margin-bottom: 540px;
 
   .intro {
     text-align: center;
@@ -147,6 +152,7 @@ const Container = styled.div`
     width: 70%;
     border-radius: 12px;
     box-shadow: 0 1px 6px #dfe4ea;
+    line-height: 2rem;
 
     .detail {
       background-color: ${(props) => props.theme.color.background};
@@ -164,8 +170,9 @@ const Container = styled.div`
       font-weight: 100;
       margin-top: 12px;
 
-      div:nth-child(2) {
-        margin-top: 24px;
+      .description {
+        width: 80%;
+        margin: 24px auto 0;
       }
 
       .title {

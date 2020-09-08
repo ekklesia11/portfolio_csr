@@ -115,7 +115,7 @@ const ProjectBox = () => {
             <div className="description">{obj.description}</div>
             <div className="position">
               {obj.roles.map((role) => (
-                <div>{role}</div>
+                <div key={role}>{role}</div>
               ))}
             </div>
             <div className="stack">{obj.stacks.join(" ")}</div>
@@ -154,7 +154,7 @@ const Container = styled.div`
 
   p {
     font-size: 1.2rem;
-    margin-bottom: 72px;
+    margin-bottom: 56px;
   }
 
   .project-layout {

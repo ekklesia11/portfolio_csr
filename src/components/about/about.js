@@ -23,15 +23,15 @@ const About = () => {
 
   const introView = (obj) => {
     return language ? (
-      <p>
+      <div className="main">
         <h3>{obj.en.title}</h3>
         <span>{obj.en.describe}</span>
-      </p>
+      </div>
     ) : (
-      <p>
+      <div className="main">
         <h3>{obj.kr.title}</h3>
         <span>{obj.kr.describe}</span>
-      </p>
+      </div>
     );
   };
 
@@ -45,16 +45,19 @@ const About = () => {
       <div
         style={{
           fontSize: "0.5rem",
-          marginBottom: "8px",
-          color: "#2f3542",
+          color: "#2ed573",
           textDecoration: "none",
         }}
       >
-        출처:{" "}
+        일러스트:{" "}
         <a
           href="https://iconscout.com/illustrations/blog-writer"
           target="_blank"
           rel="noopener noreferrer"
+          style={{
+            color: "#2ed573",
+            textDecoration: "none",
+          }}
         >
           Blog writer Illustration
         </a>{" "}
@@ -63,6 +66,10 @@ const About = () => {
           href="https://iconscout.com/contributors/delesign"
           target="_blank"
           rel="noopener noreferrer"
+          style={{
+            color: "#2ed573",
+            textDecoration: "none",
+          }}
         >
           Delesign Graphics
         </a>
@@ -78,7 +85,7 @@ const Container = styled.div`
   text-align: center;
   margin-top: 180px;
 
-  p {
+  .main {
     font-weight: 100;
     margin: 0;
 
