@@ -108,6 +108,17 @@ const Container = styled.div`
     }
   }
 
+  @media only screen and (max-width: 880px) {
+    .mail {
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
   .word {
     font-size: 1.5rem;
     margin-bottom: 24px;
