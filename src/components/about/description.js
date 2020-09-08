@@ -5,42 +5,106 @@ import server from "../../assets/server.svg";
 import client from "../../assets/client.svg";
 
 const Description = () => {
-  // const about =
-  //   "안녕하세요 개발자 다니엘 입니다. 다양한 서비스를 모던한 웹/앱으로 개발합니다. 긍정적이고 친근하며 성장하길 좋아합니다. University of Cape Town 을 졸업하고 연구원, 스타트업, 영업 등 다양한 경험을 쌓았습니다. 단순히 코딩만 잘하는 개발자가 아니라 서비스 전체를 이해하는 개발자입니다.";
+  const description = {
+    kr: {
+      greeting: "반갑습니다, 다니엘 입니다.",
+      describe:
+        "개발자로써의 삶을 시작한 이후로 다양한 서비스와 프로젝트, 그리고 좋은 결과를 만들어내기 위해 재능있는 사람들과 함께 했습니다. 늘 긍정적이고, 호기심 가득하며, 끊임없이 성장하고 발전하기를 힘쓰고 있습니다.",
+    },
+    en: {
+      greeting: "Hi, I'm Daniel. Glad to meet you.",
+      describe:
+        "Since beginning my journey as a developer, I've participated in various service projects, and collaborated with talented people to achieve great work perfomence. I'm naturally positive, reasonably curious, and perpetually working on improving my skills and problems at all time.",
+    },
+  };
+
+  const skillSet = {
+    kr: [
+      {
+        position: "프론트엔드",
+        describe: "클라이언트를 위한 개발",
+        stack: ["JavaScript(ES6+)", "React", "React-Native", "HTML", "CSS"],
+        img: client,
+      },
+      "line",
+      {
+        position: "백엔드",
+        describe: "서버사이드 개발",
+        stack: [
+          "Node.js",
+          "Express",
+          "Python",
+          "Django",
+          "MySQL",
+          "MongoDB",
+          "AWS",
+        ],
+        img: server,
+      },
+    ],
+    en: [
+      {
+        position: "Front-end",
+        describe: "For client side coding",
+        stack: ["JavaScript(ES6+)", "React", "React-Native", "HTML", "CSS"],
+        img: client,
+      },
+      "line",
+      {
+        position: "Back-end",
+        describe: "For server side coding",
+        stack: [
+          "Node.js",
+          "Express",
+          "Python",
+          "Django",
+          "MySQL",
+          "MongoDB",
+          "AWS",
+        ],
+        img: server,
+      },
+    ],
+  };
+
+  let language = 0;
+
+  const descriptionView = (obj) => {
+    return language ? (
+      <div className="intro">
+        <h4>{obj.en.greeting}</h4>
+        <span>{obj.en.describe}</span>
+      </div>
+    ) : (
+      <div className="intro">
+        <h4>{obj.kr.greeting}</h4>
+        <span>{obj.kr.describe}</span>
+      </div>
+    );
+  };
+
+  const stackView = (obj) => {
+    return obj[language ? "en" : "kr"].map((data, i) =>
+      data === "line" ? (
+        <div className="vertical-line" key={i} />
+      ) : (
+        <div className={`detail detail-${i}`} key={i}>
+          <img src={data.img} alt="" className="client" />
+          <div className="detail-text">
+            <strong>{data.position}</strong>
+            <div>{data.describe}</div>
+            <div className="title">{language ? "stacks" : "기술스택"}:</div>
+            <div>{data.stack.join(", ")}</div>
+          </div>
+        </div>
+      )
+    );
+  };
 
   return (
     <Container>
-      <div className="intro">
-        <h4>Hi, I'm Daniel. Glad to meet you.</h4>
-        <span>
-          Since beginning my journey as a developer, I've participated in
-          various service projects, and collaborated with talented people to
-          achieve great work perfomence. I'm naturally positive, reasonably
-          curious, and perpetually working on improving my skills and problems
-          at all time.
-        </span>
-      </div>
-      <div className="details">
-        <div className="detail detail-1">
-          <img src={client} alt="" className="client" />
-          <div className="detail-text">
-            <strong>Front-end</strong>
-            <div>For client side coding</div>
-            <div className="title">Stacks:</div>
-            <div>JavaScript, React, React Native, HTML, CSS</div>
-          </div>
-        </div>
-        <div className="vertical-line" />
-        <div className="detail detail-2">
-          <img src={server} alt="" className="server" />
-          <div className="detail-text">
-            <strong>Back-end</strong>
-            <div>For server side coding</div>
-            <div className="title">Stacks:</div>
-            <div>Node.js, Express, Python, Django, MySQL, MongoDB, AWS</div>
-          </div>
-        </div>
-      </div>
+      {descriptionView(description)}
+      <div className="details">{stackView(skillSet)}</div>
     </Container>
   );
 };
@@ -110,7 +174,7 @@ const Container = styled.div`
       }
     }
 
-    .detail-1 {
+    .detail-0 {
       border-radius: 12px 0 0 12px;
       border: 1px solid #dfe4ea;
       border-right: none;

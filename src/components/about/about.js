@@ -7,12 +7,37 @@ import programming from "../../assets/programming.png";
 import Description from "./description";
 
 const About = () => {
+  const intro = {
+    kr: {
+      title: "프론트엔드 개발자",
+      describe:
+        "심플하고 간단하게 서비스를 개발하면서 내 일을 사랑하는 개발자입니다.",
+    },
+    en: {
+      title: "Front-end Developer",
+      describe: "I code simple and modern things, and I love what I do.",
+    },
+  };
+
+  let language = 0;
+
+  const introView = (obj) => {
+    return language ? (
+      <p>
+        <h3>{obj.en.title}</h3>
+        <span>{obj.en.describe}</span>
+      </p>
+    ) : (
+      <p>
+        <h3>{obj.kr.title}</h3>
+        <span>{obj.kr.describe}</span>
+      </p>
+    );
+  };
+
   return (
     <Container>
-      <p>
-        <h3>Web/App Developer</h3>
-        <span>I code simple and modern things, and I love what I do.</span>
-      </p>
+      {introView(intro)}
       <div className="img-ring">
         <div className="cartoon-img" />
       </div>
