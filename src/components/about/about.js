@@ -83,7 +83,7 @@ const Container = styled.div`
   color: ${(props) => props.theme.color.text};
   font-size: 2rem;
   text-align: center;
-  margin-top: 180px;
+  padding-top: 180px;
 
   .main {
     font-weight: 100;

@@ -181,7 +181,7 @@ const Card = styled.div`
       bottom: 0;
       left: 0;
       right: 0;
-      transition: ease-in-out 0.5s;
+      transition: ease-in-out 0.7s;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -236,7 +236,7 @@ const Card = styled.div`
 
     &:hover {
       .detail {
-        background-color: ${(props) => props.theme.color.text};
+        background-color: #0a3d62;
 
         div,
         a {

@@ -30,7 +30,8 @@ const Description = () => {
       "line",
       {
         position: "백엔드",
-        describe: "서버사이드 개발",
+        describe:
+          "DB 설계부터 API 까지, 서비스에 필요한 서버를 구축하고 운영합니다.",
         stack: [
           "Node.js",
           "Express",
@@ -149,7 +150,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     color: ${(props) => props.theme.color.text};
-    width: 70%;
+    width: 80%;
     border-radius: 12px;
     box-shadow: 0 1px 6px #dfe4ea;
     line-height: 2rem;
@@ -197,6 +198,33 @@ const Container = styled.div`
     .server,
     .client {
       width: 60px;
+    }
+  }
+
+  @media only screen and (max-width: 959px) {
+    margin-bottom: 1200px;
+
+    .details {
+      flex-direction: column;
+      box-shadow: none;
+      width: 100%;
+      align-items: center;
+      margin: 64px auto 0;
+
+      .vertical-line {
+        display: none;
+      }
+
+      .detail-0 {
+        border-radius: 12px 12px 0 0;
+        border-right: 1px solid #dfe4ea;
+        border-bottom: none;
+      }
+
+      .detail-2 {
+        border-radius: 0 0 12px 12px;
+        border-left: 1px solid #dfe4ea;
+      }
     }
   }
 `;
