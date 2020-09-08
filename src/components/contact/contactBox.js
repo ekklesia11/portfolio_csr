@@ -17,8 +17,20 @@ const ContactBox = () => {
   return (
     <Container>
       <div className="mail">
-        <div>함께 프로젝트를 시작해볼까요?</div>
-        <button>메일 보내기</button>
+        <h2>프로젝트 시작하기</h2>
+        <p>
+          함께 프로젝트를 준비해볼까요?
+          <br />
+          커피는 제가 살게요 :)
+        </p>
+        <a
+          href="mailto:happyyquokka@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="send-mail"
+        >
+          메일 보내기
+        </a>
       </div>
       <div className="word">It always seems impossible until it's done.</div>
       <div className="info">
@@ -60,15 +72,40 @@ const Container = styled.div`
   font-weight: 200;
 
   .mail {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background-color: ${(props) => props.theme.color.text};
-    padding: 56px 0;
-    width: 60%;
+    padding: 46px 0;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
     top: -70px;
     border-radius: 12px;
     box-shadow: 1px 1px 6px rgba(47, 53, 66, 0.4);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+      margin: 0;
+      line-height: 2rem;
+    }
+  }
+
+  .send-mail {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: ${(props) => props.theme.color.textInverse};
+    padding: 12px 36px;
+    border: 2px solid ${(props) => props.theme.color.main};
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 80px;
+
+    &:hover {
+      background-color: ${(props) => props.theme.color.main};
+    }
   }
 
   .word {

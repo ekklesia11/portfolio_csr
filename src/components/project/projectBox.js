@@ -181,7 +181,7 @@ const Card = styled.div`
       bottom: 0;
       left: 0;
       right: 0;
-      transition: all 0.5s;
+      transition: ease-in-out 0.5s;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -220,7 +220,7 @@ const Card = styled.div`
     }
 
     .background {
-      transition: all 0.5s;
+      transition: ease-in-out 0.5s;
       background-repeat: no-repeat;
       background-size: 200px;
       background-position: center;
