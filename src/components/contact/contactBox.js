@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-import github from "../../assets/github-icon.png";
-import blog from "../../assets/blog-icon.png";
-import insta from "../../assets/insta-icon.png";
-import email from "../../assets/email-icon.png";
+import { ReactComponent as Github } from "../../assets/github-icon.svg";
+import { ReactComponent as Blog } from "../../assets/blog-icon.svg";
+import { ReactComponent as Insta } from "../../assets/insta-icon.svg";
+import { ReactComponent as Email } from "../../assets/email-icon.svg";
 
 const ContactBox = () => {
   const contact = [
-    { name: "github", link: "https://github.com/ekklesia11", icon: github },
-    { name: "instagram", link: "https://instagram.com/d_paac", icon: insta },
-    { name: "blog", link: "https://blog.chanhyun.org", icon: blog },
-    { name: "email", link: "mailto:happyyquokka@gmail.com", icon: email },
+    { name: "github", link: "https://github.com/ekklesia11", icon: Github },
+    { name: "instagram", link: "https://instagram.com/d_paac", icon: Insta },
+    { name: "blog", link: "https://blog.chanhyun.org", icon: Blog },
+    { name: "email", link: "mailto:happyyquokka@gmail.com", icon: Email },
   ];
 
   return (
@@ -23,13 +23,22 @@ const ContactBox = () => {
             href={data.link}
             target="_blank"
             rel="noopener noreferrer"
-            key={data.link}
+            key={data.name}
           >
-            <img src={data.icon} alt={data.name} />
+            <data.icon
+              fill={
+                data.name === "github" || data.name === "blog"
+                  ? "#f1f2f6"
+                  : "none"
+              }
+              stroke="#f1f2f6"
+              width="24px"
+              height="24px"
+            />
           </a>
         ))}
       </div>
-      <div className="copyright">Developed by my © 2020</div>
+      <div className="copyright">만듬 바이 미 © 2020</div>
     </Container>
   );
 };
@@ -43,10 +52,12 @@ const Container = styled.div`
 
   .word {
     font-size: 1.5rem;
+    margin-bottom: 24px;
   }
 
   .copyright {
-    margin-top: 48px;
+    margin-top: 36px;
+    font-size: 1.2rem;
   }
 
   .info {
@@ -55,19 +66,14 @@ const Container = styled.div`
     align-items: center;
 
     a {
-      width: 56px;
-      height: 56px;
-      border: 1px solid ${(props) => props.theme.color.textInverse};
+      width: 42px;
+      height: 42px;
+      border: 2px solid rgba(241, 242, 246, 0.6);
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 24px;
-    }
-
-    img {
-      display: block;
-      width: 24px;
     }
   }
 `;
