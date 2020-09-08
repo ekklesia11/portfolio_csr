@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import project1 from "../../assets/project1.png";
-import project2 from "../../assets/project2.png";
-import tabata from "../../assets/tabata-timer.jpg";
+import lunchgogo from "../../assets/lunchgogo.png";
+import secondhand from "../../assets/secondhand.png";
+import talab from "../../assets/talab.png";
 import bbegi from "../../assets/bbegi.png";
 
 const ProjectBox = () => {
@@ -17,7 +17,7 @@ const ProjectBox = () => {
         "AWS CloudFront 를 활용한 https 인증서 구현",
       ],
       stacks: ["#React", "#Javascript", "#AWS S3", "#Route53", "#CloudFront"],
-      images: tabata,
+      images: talab,
       link: "https://timer.talab.pro",
     },
     {
@@ -78,7 +78,7 @@ const ProjectBox = () => {
         "날짜기반 간략한 그래프 구현",
       ],
       stacks: ["#Python3", "#Django", "#KoNLPy", "#MySQL", "#React Native"],
-      images: project2,
+      images: secondhand,
       link: "https://github.com/ekklesia11/secondhand-server-repo",
     },
     {
@@ -97,7 +97,7 @@ const ProjectBox = () => {
         "#MongoDB",
         "#React",
       ],
-      images: project1,
+      images: lunchgogo,
       github: "https://github.com/ekklesia11/secondhand-server-repo",
       link: "https://flamboyant-ptolemy-79e553.netlify.app",
     },
@@ -172,6 +172,7 @@ const Card = styled.div`
   overflow: hidden;
   color: ${(props) => props.theme.color.textInverse};
   margin: 24px;
+  box-shadow: 0 0 6px #dfe4ea;
 
   .container {
     .detail {
