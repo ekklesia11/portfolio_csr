@@ -9,7 +9,7 @@ const Description = () => {
     kr: {
       greeting: "반갑습니다, 다니엘 입니다.",
       describe:
-        "개발자로써의 삶을 시작한 이후로 다양한 서비스와 프로젝트, 그리고 좋은 결과를 만들어내기 위해 재능있는 사람들과 함께 했습니다. 늘 긍정적이고, 호기심 가득하며, 끊임없이 성장하고 발전하기를 힘쓰고 있습니다.",
+        "개발자로써의 삶을 시작한 이후로 다양한 서비스와 프로젝트, 그리고 좋은 결과를 만들어내기 위해 재능있는 사람들과 함께 했습니다. 늘 긍정적이고, 호기심 가득하며, 끊임없이 성장하고 발전하기를 힘쓰는 개발자 입니다.",
     },
     en: {
       greeting: "Hi, I'm Daniel. Glad to meet you.",
@@ -120,7 +120,7 @@ const Container = styled.div`
   font-weight: 100;
   height: 455px;
   padding-top: 84px;
-  margin-bottom: 400px;
+  margin-bottom: 240px;
 
   .intro {
     text-align: center;
@@ -171,6 +171,7 @@ const Container = styled.div`
       .title {
         margin: 48px 0 12px;
         color: ${(props) => props.theme.color.main};
+        font-weight: 400;
       }
     }
 

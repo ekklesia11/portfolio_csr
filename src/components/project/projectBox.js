@@ -1,20 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-
-import ProjectDetail from "./projectDetail";
-import ProjectImg from "./projectImg";
-import Navigation from "./navigation/navigation";
 
 import project1 from "../../assets/project1.png";
 import project2 from "../../assets/project2.png";
 import secondhand from "../../assets/secondhand.png";
-import homepage from "../../assets/homepage.jpg";
 import tabata from "../../assets/tabata-timer.jpg";
+import bbegi from "../../assets/bbegi.png";
 
 const ProjectBox = () => {
-  const [page, setPage] = useState(0);
-  const [imgPage, setImgPage] = useState(0);
-
   const project = [
     {
       title: "타바타 운동 타이머",
@@ -23,13 +16,8 @@ const ProjectBox = () => {
         "React 및 pure javascript function 으로 구성된 타이머",
         "Basic static webapp 구현",
       ],
-      stacks: [
-        "#React",
-        "#Javascript",
-        "#AWS S3",
-        "#Route53",
-      ],
-      images: [tabata],
+      stacks: ["#React", "#Javascript", "#AWS S3", "#Route53"],
+      images: tabata,
       github: "",
       link: "http://timer.talab.pro",
     },
@@ -49,7 +37,7 @@ const ProjectBox = () => {
         "#AWS EC2",
         "#Route53",
       ],
-      images: [homepage],
+      images: bbegi,
       github: "",
       link: "https://gatda.com/",
     },
@@ -71,9 +59,8 @@ const ProjectBox = () => {
         "#AWS S3",
         "#Route53",
       ],
-      images: [
+      images:
         "https://images.unsplash.com/photo-1541560052-5e137f229371?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      ],
       github: "",
       link: "",
     },
@@ -87,7 +74,7 @@ const ProjectBox = () => {
         "선택가격범위 내 브랜드/모델 검색페이지 구현 및 월/일 데이터기반 간략한 그래프 구현",
       ],
       stacks: ["#Python3", "#Django", "#KoNLPy", "#MySQL", "#React Native"],
-      images: [project2, secondhand],
+      images: project2,
       github: "https://github.com/ekklesia11/secondhand-server-repo",
       link: "",
     },
@@ -107,65 +94,133 @@ const ProjectBox = () => {
         "#MongoDB",
         "#React",
       ],
-      images: [project1],
+      images: project1,
       github: "https://github.com/ekklesia11/secondhand-server-repo",
-      link: "",
+      link: "https://flamboyant-ptolemy-79e553.netlify.app",
     },
   ];
 
-  const handleNavigation = {
-    goNext: () => {
-      if (imgPage < project[page].images.length - 1) {
-        setImgPage(imgPage + 1);
-      } else {
-        if (page < project.length - 1) {
-          setPage(page + 1);
-        } else {
-          setPage(0);
-        }
-        setImgPage(0);
-      }
-    },
-    goPrev: () => {
-      if (imgPage > 0) {
-        setImgPage(imgPage - 1);
-      } else {
-        if (page > 0) {
-          setPage(page - 1);
-        } else {
-          setPage(project.length - 1);
-        }
-        setImgPage(0);
-      }
-    },
+  const projectCard = (obj) => {
+    return (
+      <Card key={obj.title}>
+        <div className="container">
+          <div
+            className="background"
+            style={{ backgroundImage: `url(${obj.images})` }}
+          />
+          <div className="detail">
+            <div className="description">{obj.description}</div>
+            <div className="position">{obj.roles.join(", ")}</div>
+            <div className="stack">{obj.stacks.join(", ")}</div>
+            <div className="button">페이지 이동하기</div>
+          </div>
+        </div>
+      </Card>
+    );
   };
 
   return (
     <Container>
-      <StyledProject>
-        <ProjectDetail project={project[page]} />
-        <ProjectImg
-          imgs={project[page].images[imgPage]}
-          link={project[page].link}
-          github={project[page].github}
-        />
-      </StyledProject>
-      <Navigation handleNavigation={handleNavigation} />
+      <h1>최근 프로젝트</h1>
+      <p>필요에 따라 프론트엔드와 서버 개발에 참여한 프로젝트들 입니다.</p>
+      <div className="project-layout">
+        {project.map((data) => projectCard(data))}
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
   color: ${(props) => props.theme.color.text};
-  font-size: 2vw;
   position: relative;
-  width: 100%;
+  width: 80%;
   margin-bottom: 50px;
+  text-align: center;
+  margin: 0 auto;
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 72px;
+  }
+
+  .project-layout {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
 `;
 
-const StyledProject = styled.div`
-  display: flex;
-  padding: 0 5vw;
+const Card = styled.div`
+  width: 500px;
+  height: 300px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  color: ${(props) => props.theme.color.textInverse};
+  margin: 24px;
+
+  .container {
+    .detail {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: all 0.5s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .button {
+        padding: 12px 0;
+        border: 1px solid ${(props) => props.theme.color.main};
+        width: 140px;
+        margin: 0 auto;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-radius: 24px;
+        margin-top: 8px;
+
+        &:hover {
+          background-color: ${(props) => props.theme.color.main};
+        }
+      }
+
+      div {
+        opacity: 0;
+      }
+    }
+
+    .background {
+      transition: all 0.5s;
+      background-repeat: no-repeat;
+      background-size: 140px;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border: 1px solid #dfe4ea;
+      border-radius: 12px;
+    }
+
+    &:hover {
+      .detail {
+        background-color: ${(props) => props.theme.color.text};
+
+        div {
+          opacity: 1;
+        }
+      }
+
+      .background {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+  }
 `;
 
 export default ProjectBox;
