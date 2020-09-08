@@ -42,6 +42,31 @@ const About = () => {
         <div className="cartoon-img" />
       </div>
       <div className="programming-img" />
+      <div
+        style={{
+          fontSize: "0.5rem",
+          marginBottom: "8px",
+          color: "#2f3542",
+          textDecoration: "none",
+        }}
+      >
+        출처:{" "}
+        <a
+          href="https://iconscout.com/illustrations/blog-writer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Blog writer Illustration
+        </a>{" "}
+        by{" "}
+        <a
+          href="https://iconscout.com/contributors/delesign"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Delesign Graphics
+        </a>
+      </div>
       <Description />
     </Container>
   );
@@ -99,7 +124,7 @@ const Container = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center left;
-    margin: 0 auto 8px;
+    margin: 0 auto;
   }
 `;
 

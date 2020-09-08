@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import project1 from "../../assets/project1.png";
 import project2 from "../../assets/project2.png";
-import secondhand from "../../assets/secondhand.png";
 import tabata from "../../assets/tabata-timer.jpg";
 import bbegi from "../../assets/bbegi.png";
 
@@ -11,22 +10,25 @@ const ProjectBox = () => {
   const project = [
     {
       title: "타바타 운동 타이머",
-      description: "고강도 인터벌 운동을 위해 제작된 인터벌 전용 타이머입니다.",
+      description: "고강도 인터벌 운동을 위해 제작된 인터벌 전용 타이머",
       roles: [
         "React 및 pure javascript function 으로 구성된 타이머",
         "Basic static webapp 구현",
+        "AWS CloudFront 를 활용한 https 인증서 구현",
       ],
-      stacks: ["#React", "#Javascript", "#AWS S3", "#Route53"],
+      stacks: ["#React", "#Javascript", "#AWS S3", "#Route53", "#CloudFront"],
       images: tabata,
-      github: "",
-      link: "http://timer.talab.pro",
+      link: "https://timer.talab.pro",
     },
     {
       title: "서비스 홈페이지",
-      description: "서비스 소개 및 제휴, 고객을 위한 랜딩 페이지입니다.",
+      description: "서비스 소개 및 제휴, 고객을 위한 랜딩 페이지",
       roles: [
-        "React Server Side Rendering 및 적응형 홈페이지 구현",
-        "Nginx 서버와 Let's Encrypt 를 활용한 HTTPS 페이지 구현",
+        "바닐라 자바스크립트 및 CSS 구현",
+        "함수형 리액트, 적응형 웹페이지 구현",
+        "SEO 를 위해 Node.js 서버 구현 및 Nginx 활용",
+        "SSL 인증서 적용(certbot/letsencrypt)",
+        "AWS EC2 서버환경으로 배포",
       ],
       stacks: [
         "#React",
@@ -38,16 +40,17 @@ const ProjectBox = () => {
         "#Route53",
       ],
       images: bbegi,
-      github: "",
       link: "https://gatda.com/",
     },
     {
       title: "서비스 어드민 페이지",
-      description: "서비스의 운영 관리를 위한 권한별 어드민 페이지입니다.",
+      description: "서비스의 운영 관리를 위한 사용자 권한별 어드민 페이지",
       roles: [
-        "React Client Side Rendering, AWS S3 기반 Static 웹 사이트 구현",
-        "토큰 기반 권한별 로그인, 기능별 CRUD API 및 Front side 페이지 구현",
-        "Webpack 및 Babel 환경 세팅",
+        "React Client Side Rendering 페이지 구현",
+        "ES6 기준 Webpack 및 babel(IE9) 환경세팅",
+        "AWS S3 배포 Static 웹 구현",
+        "공지/이벤트/배너 CRUD API 제작",
+        "Bitbucket Pipeline 활용 및 배포 자동화",
       ],
       stacks: [
         "#React",
@@ -61,30 +64,30 @@ const ProjectBox = () => {
       ],
       images:
         "https://images.unsplash.com/photo-1541560052-5e137f229371?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      github: "",
-      link: "",
+      link: "#",
     },
     {
       title: "SecondHand",
       description:
-        "최근 30일 내 중고거래가를 알아보자! 중고거래가 활발한 유모차를 시작으로 중고거래 사이트의 크롤링한 데이터를 브랜드와 모델로 매칭시켜 중고거래시 기준을 세우는데 도움을 주는 어플리케이션입니다.",
+        "유모차의 적정한 중고시장 가격을 판단하기 위한 브랜드 및 모델별 평균가격 제공앱",
       roles: [
-        "중고거래 사이트별 크롤링 구현",
-        "게시글 타이틀/내용 필터링 함수 구현 및 브랜드/모델 매칭",
-        "선택가격범위 내 브랜드/모델 검색페이지 구현 및 월/일 데이터기반 간략한 그래프 구현",
+        "기획 및 플로우 구성",
+        "Django 를 활용한 중고거래 플랫폼 전용 크롤러 구현",
+        "React Native(expo) 활용 및 특정 가격내 상품 검색페이지 구현",
+        "게시글 타이틀/내용 필터링 함수 및 브랜드/모델 매칭 구현",
+        "날짜기반 간략한 그래프 구현",
       ],
       stacks: ["#Python3", "#Django", "#KoNLPy", "#MySQL", "#React Native"],
       images: project2,
-      github: "https://github.com/ekklesia11/secondhand-server-repo",
-      link: "",
+      link: "https://github.com/ekklesia11/secondhand-server-repo",
     },
     {
       title: "Lunch-gogo",
-      description:
-        "오늘 뭐먹지? 매일하는 고민, 이제는 재밌게 메뉴를 골라보자! 직장인들이 점심메뉴를 선정할 때 실시간 투표를 통해서 재밌게 정하고, 투표결과에 따라 반경 500m 내 거리순으로 식당목록을 제공합니다.",
+      description: "실시간 점심메뉴 투표로 게임방식의 메뉴선정 서비스 웹앱",
       roles: [
-        "실시간 투표 API 구현",
-        "사용자 위치기반 반경 500m 내 거리순 식당목록 제공",
+        "Node.js 및 Socket.io 을 활용한 실시간 투표 API 구현",
+        "MongoDB 시스템으로 각 투표 결과 데이터관리",
+        "heroku 서버 자동 배포 및 netlify client 배포(github)",
       ],
       stacks: [
         "#JavaScript",
@@ -110,9 +113,20 @@ const ProjectBox = () => {
           />
           <div className="detail">
             <div className="description">{obj.description}</div>
-            <div className="position">{obj.roles.join(", ")}</div>
-            <div className="stack">{obj.stacks.join(", ")}</div>
-            <div className="button">페이지 이동하기</div>
+            <div className="position">
+              {obj.roles.map((role) => (
+                <div>{role}</div>
+              ))}
+            </div>
+            <div className="stack">{obj.stacks.join(" ")}</div>
+            <a
+              className="button"
+              href={obj.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              페이지 이동하기
+            </a>
           </div>
         </div>
       </Card>
@@ -151,8 +165,8 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   border-radius: 12px;
   position: relative;
   overflow: hidden;
@@ -170,31 +184,44 @@ const Card = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 12px;
+
+      .description {
+        margin: 0 auto;
+        font-size: 1.5rem;
+      }
+
+      .stack {
+        color: ${(props) => props.theme.color.main};
+      }
 
       .button {
         padding: 12px 0;
         border: 1px solid ${(props) => props.theme.color.main};
         width: 140px;
-        margin: 0 auto;
+        margin: 8px auto;
         cursor: pointer;
         transition: all 0.3s;
         border-radius: 24px;
-        margin-top: 8px;
+        color: ${(props) => props.theme.color.textInverse};
+        text-decoration: none;
 
         &:hover {
           background-color: ${(props) => props.theme.color.main};
         }
       }
 
-      div {
+      div,
+      a {
         opacity: 0;
+        margin: 12px 0;
       }
     }
 
     .background {
       transition: all 0.5s;
       background-repeat: no-repeat;
-      background-size: 140px;
+      background-size: 200px;
       background-position: center;
       position: absolute;
       top: 0;
@@ -210,7 +237,8 @@ const Card = styled.div`
       .detail {
         background-color: ${(props) => props.theme.color.text};
 
-        div {
+        div,
+        a {
           opacity: 1;
         }
       }
