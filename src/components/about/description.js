@@ -151,6 +151,7 @@ const Container = styled.div`
     justify-content: center;
     color: ${(props) => props.theme.color.text};
     width: 80%;
+    max-width: 1200px;
     border-radius: 12px;
     box-shadow: 0 1px 6px #dfe4ea;
     line-height: 2rem;

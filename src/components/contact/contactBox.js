@@ -75,7 +75,7 @@ const Container = styled.div`
     font-size: 1.2rem;
     background-color: ${(props) => props.theme.color.text};
     padding: 46px 0;
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;

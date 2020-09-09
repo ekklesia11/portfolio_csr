@@ -10,7 +10,7 @@ const ProjectBox = () => {
   const project = [
     {
       title: "타바타 운동 타이머",
-      description: "고강도 인터벌 운동을 위해 제작된 인터벌 전용 타이머",
+      description: ["고강도 인터벌 운동을 위해 제작된", "인터벌 전용 타이머"],
       roles: [
         "React 및 pure javascript function 으로 구성된 타이머",
         "Basic static webapp 구현",
@@ -22,7 +22,7 @@ const ProjectBox = () => {
     },
     {
       title: "서비스 홈페이지",
-      description: "서비스 소개 및 제휴, 고객을 위한 랜딩 페이지",
+      description: ["서비스 소개 및 제휴", "고객을 위한 랜딩 페이지"],
       roles: [
         "바닐라 자바스크립트 및 CSS 구현",
         "함수형 리액트, 적응형 웹페이지 구현",
@@ -44,7 +44,7 @@ const ProjectBox = () => {
     },
     {
       title: "서비스 어드민 페이지",
-      description: "서비스의 운영 관리를 위한 사용자 권한별 어드민 페이지",
+      description: ["서비스의 운영 관리를 위한", "사용자 권한별 어드민 페이지"],
       roles: [
         "React Client Side Rendering 페이지 구현",
         "ES6 기준 Webpack 및 babel(IE9) 환경세팅",
@@ -68,8 +68,10 @@ const ProjectBox = () => {
     },
     {
       title: "SecondHand",
-      description:
-        "유모차의 적정한 중고시장 가격을 판단하기 위한 브랜드 및 모델별 평균가격 제공앱",
+      description: [
+        "유모차의 적정한 중고시장 가격을 판단하기 위한",
+        "브랜드 및 모델별 평균가격 제공앱",
+      ],
       roles: [
         "기획 및 플로우 구성",
         "Django 를 활용한 중고거래 플랫폼 전용 크롤러 구현",
@@ -83,7 +85,7 @@ const ProjectBox = () => {
     },
     {
       title: "Lunch-gogo",
-      description: "실시간 점심메뉴 투표로 게임방식의 메뉴선정 서비스 웹앱",
+      description: ["실시간 점심메뉴 투표게임 방식의", "메뉴선정 서비스 웹앱"],
       roles: [
         "Node.js 및 Socket.io 을 활용한 실시간 투표 API 구현",
         "MongoDB 시스템으로 각 투표 결과 데이터관리",
@@ -112,7 +114,10 @@ const ProjectBox = () => {
             style={{ backgroundImage: `url(${obj.images})` }}
           />
           <div className="detail">
-            <div className="description">{obj.description}</div>
+            <div className="description">
+              <div>{obj.description[0]}</div>
+              <div>{obj.description[1]}</div>
+            </div>
             <div className="position">
               {obj.roles.map((role) => (
                 <div key={role}>{role}</div>
@@ -148,6 +153,7 @@ const Container = styled.div`
   color: ${(props) => props.theme.color.text};
   position: relative;
   width: 80%;
+  max-width: 1200px;
   margin-bottom: 50px;
   text-align: center;
   margin: 0 auto 120px;
@@ -165,7 +171,7 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
-  width: 600px;
+  width: 550px;
   height: 400px;
   border-radius: 12px;
   position: relative;
@@ -215,7 +221,7 @@ const Card = styled.div`
       div,
       a {
         opacity: 0;
-        margin: 12px 0;
+        margin: 8px 0;
       }
     }
 
