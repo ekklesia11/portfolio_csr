@@ -1,52 +1,146 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-
-import Menu from "./menu";
+import {
+  faBars,
+  faInfoCircle,
+  faBriefcase,
+  faEnvelope,
+  faBlog,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-scroll";
 
 const MenuTab = () => {
-  const [menuToggle, setMenuToggle] = useState(false);
-
+  const [toggleMenu, setToggleMenu] = useState(false);
   const menus = [
-    { name: "ABOUT", link: "about" },
-    { name: "PROJECTS", link: "project" },
-    { name: "CONTACT", link: "contact" },
-    { name: "BLOG", link: "blog" },
+    {
+      name: "about",
+      link: "about",
+      location: "rotate(300deg) translateY(-100px) rotate(60deg)",
+      timing: "0s",
+      icon: faInfoCircle,
+    },
+    {
+      name: "project",
+      link: "project",
+      location: "rotate(260deg) translateY(-105px) rotate(100deg)",
+      timing: "0.1s",
+      icon: faBriefcase,
+    },
+    {
+      name: "contact",
+      link: "contact",
+      location: "rotate(220deg) translateY(-105px) rotate(140deg)",
+      timing: "0.2s",
+      icon: faEnvelope,
+    },
+    {
+      name: "blog",
+      link: "https://blog.chanhyun.org",
+      location: "rotate(180deg) translateY(-100px) rotate(180deg)",
+      timing: "0.3s",
+      icon: faBlog,
+    },
   ];
 
-  const toggleMenu = () => setMenuToggle(!menuToggle);
+  const menuToggler = () => setToggleMenu(!toggleMenu);
 
   return (
     <Container>
-      <div className="menu-btn">
-        <FontAwesomeIcon icon={faBars} onClick={toggleMenu} />
+      <div className="menu">
+        <div class="menu-button" onClick={menuToggler}>
+          <FontAwesomeIcon icon={faBars} color="#f1f2f6" size="lg" />
+        </div>
+        {menus.map((menu) =>
+          menu.name === "blog" ? (
+            <a
+              className="menu-item"
+              href={menu.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={
+                toggleMenu
+                  ? {
+                      transform: menu.location,
+                      transitionDelay: menu.timing,
+                    }
+                  : {
+                      transform: "translate(0px, 0px)",
+                    }
+              }
+              onClick={menuToggler}
+            >
+              <FontAwesomeIcon icon={menu.icon} color="#f1f2f6" size="lg" />
+            </a>
+          ) : (
+            <Link
+              className="menu-item"
+              key={menu.name}
+              to={menu.link}
+              smooth={true}
+              duration={500}
+              style={
+                toggleMenu
+                  ? {
+                      transform: menu.location,
+                      transitionDelay: menu.timing,
+                    }
+                  : {
+                      transform: "translate(0px, 0px)",
+                    }
+              }
+              onClick={menuToggler}
+            >
+              <FontAwesomeIcon icon={menu.icon} color="#f1f2f6" size="lg" />
+            </Link>
+          )
+        )}
       </div>
-      {menuToggle
-        ? menus.map((menu) => (
-            <Menu key={menu.name} menu={menu} toggleMenu={toggleMenu} />
-          ))
-        : null}
     </Container>
   );
 };
 
 const Container = styled.div`
-  color: ${(props) => props.theme.color.text};
-  position: fixed;
-  top: 0;
-  right: 0;
-  text-align: right;
-  z-index: 500;
-  font-size: 3vw;
+  .menu {
+    position: fixed;
+    top: 72px;
+    right: 96px;
+  }
 
-  .menu-btn {
-    margin: 2vw 3vw 0;
+  .menu-button {
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    border-radius: 50%;
+    background: ${(props) => props.theme.color.main};
+    overflow: hidden;
+    text-decoration: none;
+    line-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
   }
 
-  img {
-    width: 6vw;
+  .menu-item {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    line-height: 5px;
+    border-radius: 50%;
+    background-color: ${(props) => props.theme.color.main};
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+      box-shadow: 0 0 6px ${(props) => props.theme.color.main};
+    }
   }
 `;
 

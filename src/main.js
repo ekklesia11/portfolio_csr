@@ -8,6 +8,9 @@ import ContactBox from "./components/contact/contactBox";
 const Main = () => {
   return (
     <div>
+      {/* <About />
+      <ProjectBox />
+      <ContactBox /> */}
       <Element id="about">
         <About />
       </Element>

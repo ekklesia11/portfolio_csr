@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
 
-const Menu = ({ menu, toggleMenu }) => {
+const Menu = ({ menu }) => {
   return (
     <Container>
-      {menu.name === "BLOG" ? (
+      {menu.name === "블로그" ? (
         <a
           href="https://blog.chanhyun.org/"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: "none", color: "#fff" }}
+          className={menu.link}
         >
           {menu.name}
         </a>
@@ -19,7 +19,7 @@ const Menu = ({ menu, toggleMenu }) => {
           to={menu.link}
           smooth={true}
           duration={500}
-          onClick={toggleMenu}
+          className={menu.link}
         >
           {menu.name}
         </StyledLink>
@@ -29,12 +29,47 @@ const Menu = ({ menu, toggleMenu }) => {
 };
 
 const Container = styled.div`
-  background-color: #000;
-  border: 2px solid ${(props) => props.theme.color.red};
-  margin: 0 2vw 1vw 0;
-  text-align: right;
-  position: relative;
-  right: 1vw;
+  transition: transform 0.5s;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.color.main};
+    font-size: 0.9rem;
+  }
+
+  .about,
+  .project,
+  .contact,
+  .blog {
+    border: 2px solid ${(props) => props.theme.color.main};
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about {
+    top: -24px;
+    left: -124px;
+  }
+
+  .project {
+    top: 42px;
+    left: -100px;
+  }
+
+  .contact {
+    top: 92px;
+    left: -52px;
+  }
+
+  .blog {
+    top: 106px;
+    left: 16px;
+  }
 `;
 
 const StyledLink = styled(Link)`
