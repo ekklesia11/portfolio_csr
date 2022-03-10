@@ -1,71 +1,53 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { ReactComponent as Github } from "../../assets/github-icon.svg";
-import { ReactComponent as Blog } from "../../assets/blog-icon.svg";
-import { ReactComponent as Insta } from "../../assets/insta-icon.svg";
-import { ReactComponent as Email } from "../../assets/email-icon.svg";
+import { ReactComponent as Github } from '../../assets/github-icon.svg';
+import { ReactComponent as Blog } from '../../assets/blog-icon.svg';
+import { ReactComponent as Insta } from '../../assets/insta-icon.svg';
+import { ReactComponent as Email } from '../../assets/email-icon.svg';
 
 const ContactBox = () => {
   const contact = [
-    { name: "github", link: "https://github.com/ekklesia11", icon: Github },
-    { name: "instagram", link: "https://instagram.com/d_paac", icon: Insta },
-    { name: "blog", link: "https://blog.chanhyun.org", icon: Blog },
-    { name: "email", link: "mailto:happyyquokka@gmail.com", icon: Email },
+    { name: 'github', link: 'https://github.com/ekklesia11', icon: Github },
+    { name: 'instagram', link: 'https://instagram.com/d_paac', icon: Insta },
+    { name: 'blog', link: 'https://blog.chanhyun.org', icon: Blog },
+    { name: 'email', link: 'mailto:happyyquokka@gmail.com', icon: Email },
   ];
 
   return (
     <Container>
-      <div className="mail">
+      <div className='mail'>
         <h2>프로젝트 시작하기</h2>
         <p>
           함께 프로젝트를 준비해볼까요?
           <br />
           커피는 제가 살게요 :)
         </p>
-        <a
-          href="mailto:happyyquokka@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="send-mail"
-        >
+        <a href='mailto:happyyquokka@gmail.com' target='_blank' rel='noopener noreferrer' className='send-mail'>
           메일 보내기
         </a>
       </div>
-      <div className="word">It always seems impossible until it's done.</div>
-      <div className="info">
+      <div className='word'>It always seems impossible until it's done.</div>
+      <div className='info'>
         {contact.map((data) => (
-          <a
-            href={data.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={data.name}
-          >
+          <a href={data.link} target='_blank' rel='noopener noreferrer' key={data.name}>
             <data.icon
-              fill={
-                data.name === "github" || data.name === "blog"
-                  ? "#f1f2f6"
-                  : "none"
-              }
-              stroke="#f1f2f6"
-              width="24px"
-              height="24px"
+              fill={data.name === 'github' || data.name === 'blog' ? '#f1f2f6' : 'none'}
+              stroke='#f1f2f6'
+              width='24px'
+              height='24px'
             />
           </a>
         ))}
       </div>
-      <div className="copyright">만듬 바이 미 © 2020</div>
+      <div className='copyright'>© 2022 Daniel</div>
     </Container>
   );
 };
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.color.main};
-  background-image: linear-gradient(
-    to top left,
-    rgba(46, 213, 160, 1),
-    ${(props) => props.theme.color.main}
-  );
+  background-image: linear-gradient(to top left, rgba(46, 213, 160, 1), ${(props) => props.theme.color.main});
   color: ${(props) => props.theme.color.textInverse};
   padding: 16px 0 96px;
   text-align: center;

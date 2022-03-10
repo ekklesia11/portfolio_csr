@@ -1,21 +1,20 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import main from "../../assets/main.jpg";
-import programming from "../../assets/programming.png";
+import new_me from '../../assets/new_my.jpeg';
+import programming from '../../assets/programming.png';
 
-import Description from "./description";
+import Description from './description';
 
 const About = () => {
   const intro = {
     kr: {
-      title: "프론트엔드 개발자",
-      describe:
-        "심플하고 간단하게 서비스를 개발하면서 내 일을 사랑하는 개발자입니다.",
+      title: '백엔드 개발자',
+      describe: '열정적이고 즐겁게, 단순하지만 확실하게 개발하는',
     },
     en: {
-      title: "Front-end Developer",
-      describe: "I code simple and modern things, and I love what I do.",
+      title: 'Backend Developer',
+      describe: 'I code simple and modern things, and I love what I do.',
     },
   };
 
@@ -23,14 +22,14 @@ const About = () => {
 
   const introView = (obj) => {
     return language ? (
-      <div className="main">
-        <h3>{obj.en.title}</h3>
+      <div className='main'>
         <span>{obj.en.describe}</span>
+        <h3>{obj.en.title}</h3>
       </div>
     ) : (
-      <div className="main">
-        <h3>{obj.kr.title}</h3>
+      <div className='main'>
         <span>{obj.kr.describe}</span>
+        <h3>{obj.kr.title}</h3>
       </div>
     );
   };
@@ -38,37 +37,37 @@ const About = () => {
   return (
     <Container>
       {introView(intro)}
-      <div className="img-ring">
-        <div className="cartoon-img" />
+      <div className='img-ring'>
+        <div className='cartoon-img' />
       </div>
-      <div className="programming-img" />
+      <div className='programming-img' />
       <div
         style={{
-          fontSize: "0.5rem",
-          color: "#2ed573",
-          textDecoration: "none",
+          fontSize: '0.5rem',
+          color: '#2ed573',
+          textDecoration: 'none',
         }}
       >
-        일러스트:{" "}
+        일러스트:{' '}
         <a
-          href="https://iconscout.com/illustrations/blog-writer"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://iconscout.com/illustrations/blog-writer'
+          target='_blank'
+          rel='noopener noreferrer'
           style={{
-            color: "#2ed573",
-            textDecoration: "none",
+            color: '#2ed573',
+            textDecoration: 'none',
           }}
         >
           Blog writer Illustration
-        </a>{" "}
-        by{" "}
+        </a>{' '}
+        by{' '}
         <a
-          href="https://iconscout.com/contributors/delesign"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://iconscout.com/contributors/delesign'
+          target='_blank'
+          rel='noopener noreferrer'
           style={{
-            color: "#2ed573",
-            textDecoration: "none",
+            color: '#2ed573',
+            textDecoration: 'none',
           }}
         >
           Delesign Graphics
@@ -94,12 +93,12 @@ const Container = styled.div`
     }
 
     h3 {
-      margin: 0 0 16px;
+      margin: 8px 0;
     }
   }
 
   .cartoon-img {
-    background-image: url("${main}");
+    background-image: url("${new_me}");
     border: 1px solid #fff;
     width: 220px;
     height: 220px;
@@ -117,7 +116,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 36px auto 72px;
+    margin: 54px auto 120px;
 
     &:hover {
       box-shadow: 0px 0px 4px ${(props) => props.theme.color.main};
@@ -132,6 +131,13 @@ const Container = styled.div`
     background-repeat: no-repeat;
     background-position: center left;
     margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 959px) {
+    .programming-img {
+      width: 460px;
+      height: 230px;
+    }
   }
 `;
 

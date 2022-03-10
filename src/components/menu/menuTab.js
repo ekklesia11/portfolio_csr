@@ -1,44 +1,38 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faInfoCircle,
-  faBriefcase,
-  faEnvelope,
-  faBlog,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-scroll";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faInfoCircle, faBriefcase, faEnvelope, faBlog } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-scroll';
 
 const MenuTab = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const menus = [
     {
-      name: "about",
-      link: "about",
-      location: "rotate(300deg) translateY(-100px) rotate(60deg)",
-      timing: "0s",
+      name: 'about',
+      link: 'about',
+      location: 'rotate(300deg) translateY(-100px) rotate(60deg)',
+      timing: '0s',
       icon: faInfoCircle,
     },
     {
-      name: "project",
-      link: "project",
-      location: "rotate(260deg) translateY(-105px) rotate(100deg)",
-      timing: "0.1s",
+      name: 'project',
+      link: 'project',
+      location: 'rotate(260deg) translateY(-105px) rotate(100deg)',
+      timing: '0.1s',
       icon: faBriefcase,
     },
     {
-      name: "contact",
-      link: "contact",
-      location: "rotate(220deg) translateY(-105px) rotate(140deg)",
-      timing: "0.2s",
+      name: 'contact',
+      link: 'contact',
+      location: 'rotate(220deg) translateY(-105px) rotate(140deg)',
+      timing: '0.2s',
       icon: faEnvelope,
     },
     {
-      name: "blog",
-      link: "https://blog.chanhyun.org",
-      location: "rotate(180deg) translateY(-100px) rotate(180deg)",
-      timing: "0.3s",
+      name: 'blog',
+      link: 'https://blog.chanhyun.org',
+      location: 'rotate(180deg) translateY(-100px) rotate(180deg)',
+      timing: '0.3s',
       icon: faBlog,
     },
   ];
@@ -47,17 +41,18 @@ const MenuTab = () => {
 
   return (
     <Container>
-      <div className="menu">
-        <div class="menu-button" onClick={menuToggler}>
-          <FontAwesomeIcon icon={faBars} color="#f1f2f6" size="lg" />
+      <div className='menu'>
+        <div className='menu-button' onClick={menuToggler}>
+          <FontAwesomeIcon icon={faBars} color='#f1f2f6' size='lg' />
         </div>
         {menus.map((menu) =>
-          menu.name === "blog" ? (
+          menu.name === 'blog' ? (
             <a
-              className="menu-item"
+              className='menu-item'
+              key={menu.name}
               href={menu.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
               style={
                 toggleMenu
                   ? {
@@ -65,16 +60,16 @@ const MenuTab = () => {
                       transitionDelay: menu.timing,
                     }
                   : {
-                      transform: "translate(0px, 0px)",
+                      transform: 'translate(0px, 0px)',
                     }
               }
               onClick={menuToggler}
             >
-              <FontAwesomeIcon icon={menu.icon} color="#f1f2f6" size="lg" />
+              <FontAwesomeIcon icon={menu.icon} color='#f1f2f6' size='lg' />
             </a>
           ) : (
             <Link
-              className="menu-item"
+              className='menu-item'
               key={menu.name}
               to={menu.link}
               smooth={true}
@@ -86,12 +81,12 @@ const MenuTab = () => {
                       transitionDelay: menu.timing,
                     }
                   : {
-                      transform: "translate(0px, 0px)",
+                      transform: 'translate(0px, 0px)',
                     }
               }
               onClick={menuToggler}
             >
-              <FontAwesomeIcon icon={menu.icon} color="#f1f2f6" size="lg" />
+              <FontAwesomeIcon icon={menu.icon} color='#f1f2f6' size='lg' />
             </Link>
           )
         )}
