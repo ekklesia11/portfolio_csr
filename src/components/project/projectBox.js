@@ -5,9 +5,22 @@ import lunchgogo from '../../assets/lunchgogo.png';
 import secondhand from '../../assets/secondhand.png';
 import talab from '../../assets/talab.png';
 import bbegi from '../../assets/bbegi.png';
+import cashwalk from '../../assets/cashwalk.png';
 
 const ProjectBox = () => {
   const project = [
+    {
+      title: '캐시워크',
+      description: ['세부 서비스별 기능', '서버 개발'],
+      roles: [
+        'Node 및 Lambda cron server 개발',
+        'Web crawler 개발',
+        'Redis, DynamoDB, Athena(firehose) 를 활용한 랭킹 API 개발',
+      ],
+      stacks: ['#Nodejs', '#AWS', '#React', '#Nextjs'],
+      images: cashwalk,
+      link: '',
+    },
     {
       title: '타바타 운동 타이머',
       description: ['고강도 인터벌 운동을 위해 제작된', '인터벌 전용 타이머'],
@@ -94,9 +107,9 @@ const ProjectBox = () => {
               ))}
             </div>
             <div className='stack'>{obj.stacks.join(' ')}</div>
-            <a className='button' href={obj.link} target='_blank' rel='noopener noreferrer'>
+            {/* <a className='button' href={obj.link} target='_blank' rel='noopener noreferrer'>
               페이지 이동하기
-            </a>
+            </a> */}
           </div>
         </div>
       </Card>

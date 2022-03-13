@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faInfoCircle, faBriefcase, faEnvelope, faBlog } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faInfoCircle, faBriefcase, faEnvelope, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
 
 const MenuTab = () => {
@@ -29,11 +29,11 @@ const MenuTab = () => {
       icon: faEnvelope,
     },
     {
-      name: 'blog',
-      link: 'https://blog.chanhyun.org',
+      name: 'resume',
+      link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423',
       location: 'rotate(180deg) translateY(-100px) rotate(180deg)',
       timing: '0.3s',
-      icon: faBlog,
+      icon: faAddressCard,
     },
   ];
 
@@ -46,7 +46,7 @@ const MenuTab = () => {
           <FontAwesomeIcon icon={faBars} color='#f1f2f6' size='lg' />
         </div>
         {menus.map((menu) =>
-          menu.name === 'blog' ? (
+          menu.name === 'resume' ? (
             <a
               className='menu-item'
               key={menu.name}
