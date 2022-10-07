@@ -19,9 +19,9 @@ const ContactBox = () => {
       <div className='mail'>
         <h2>프로젝트 시작하기</h2>
         <p>
-          함께 프로젝트를 준비해볼까요?
+          커피 한잔 하면서
           <br />
-          커피는 제가 살게요 :)
+          함께 프로젝트를 준비해볼까요?
         </p>
         <a href='mailto:happyyquokka@gmail.com' target='_blank' rel='noopener noreferrer' className='send-mail'>
           메일 보내기
@@ -46,16 +46,15 @@ const ContactBox = () => {
 };
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.color.main};
-  background-image: linear-gradient(to top left, rgba(46, 213, 160, 1), ${(props) => props.theme.color.main});
-  color: ${(props) => props.theme.color.textInverse};
+  background-color: ${(props) => props.theme.color.background};
+  color: ${(props) => props.theme.color.text};
   padding: 16px 0 96px;
   text-align: center;
   font-weight: 200;
 
   .mail {
     font-size: 1.2rem;
-    background-color: ${(props) => props.theme.color.text};
+    background-image: linear-gradient(to top left, rgba(46, 213, 160, 1), ${(props) => props.theme.color.point});
     padding: 46px 0;
     width: 80%;
     max-width: 1200px;
@@ -78,7 +77,7 @@ const Container = styled.div`
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 400;
-    color: ${(props) => props.theme.color.textInverse};
+    color: ${(props) => props.theme.color.text};
     padding: 12px 36px;
     border: 2px solid ${(props) => props.theme.color.main};
     cursor: pointer;
@@ -87,17 +86,6 @@ const Container = styled.div`
 
     &:hover {
       background-color: ${(props) => props.theme.color.main};
-    }
-  }
-
-  @media only screen and (max-width: 880px) {
-    .mail {
-      flex-direction: column;
-      align-items: center;
-
-      p {
-        margin-bottom: 24px;
-      }
     }
   }
 
@@ -128,8 +116,29 @@ const Container = styled.div`
       transition: all 0.2s;
 
       &:hover {
-        border-color: ${(props) => props.theme.color.background};
-        box-shadow: 0 0 8px ${(props) => props.theme.color.background};
+        border-color: ${(props) => props.theme.color.point};
+        box-shadow: 0 0 8px ${(props) => props.theme.color.point};
+      }
+    }
+  }
+
+  @media only screen and (max-width: 880px) {
+    .mail {
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        margin-bottom: 24px;
+      }
+    }
+
+    .word {
+      font-size: 1rem;
+    }
+
+    .info {
+      a {
+        margin: 24px 12px;
       }
     }
   }

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faInfoCircle, faBriefcase, faEnvelope, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
+import { theme } from '../../common/theme';
 
 const MenuTab = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -10,28 +11,32 @@ const MenuTab = () => {
     {
       name: 'about',
       link: 'about',
-      location: 'rotate(300deg) translateY(-100px) rotate(60deg)',
+      // location: 'rotate(300deg) translateY(-100px) rotate(60deg)',
+      location: 'translateX(-240px)',
       timing: '0s',
       icon: faInfoCircle,
     },
     {
       name: 'project',
       link: 'project',
-      location: 'rotate(260deg) translateY(-105px) rotate(100deg)',
+      // location: 'rotate(260deg) translateY(-105px) rotate(100deg)',
+      location: 'translateX(-180px)',
       timing: '0.1s',
       icon: faBriefcase,
     },
     {
       name: 'contact',
       link: 'contact',
-      location: 'rotate(220deg) translateY(-105px) rotate(140deg)',
+      // location: 'rotate(220deg) translateY(-105px) rotate(140deg)',
+      location: 'translateX(-120px)',
       timing: '0.2s',
       icon: faEnvelope,
     },
     {
       name: 'resume',
       link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423',
-      location: 'rotate(180deg) translateY(-100px) rotate(180deg)',
+      // location: 'rotate(180deg) translateY(-100px) rotate(180deg)',
+      location: 'translateX(-60px)',
       timing: '0.3s',
       icon: faAddressCard,
     },
@@ -43,7 +48,7 @@ const MenuTab = () => {
     <Container>
       <div className='menu'>
         <div className='menu-button' onClick={menuToggler}>
-          <FontAwesomeIcon icon={faBars} color='#f1f2f6' size='lg' />
+          <FontAwesomeIcon icon={faBars} color={theme.color.background} size='lg' />
         </div>
         {menus.map((menu) =>
           menu.name === 'resume' ? (
@@ -65,7 +70,7 @@ const MenuTab = () => {
               }
               onClick={menuToggler}
             >
-              <FontAwesomeIcon icon={menu.icon} color='#f1f2f6' size='lg' />
+              <FontAwesomeIcon icon={menu.icon} color={theme.color.background} size='lg' />
             </a>
           ) : (
             <Link
@@ -86,7 +91,7 @@ const MenuTab = () => {
               }
               onClick={menuToggler}
             >
-              <FontAwesomeIcon icon={menu.icon} color='#f1f2f6' size='lg' />
+              <FontAwesomeIcon icon={menu.icon} color={theme.color.background} size='lg' />
             </Link>
           )
         )}
@@ -98,8 +103,8 @@ const MenuTab = () => {
 const Container = styled.div`
   .menu {
     position: fixed;
-    top: 72px;
-    right: 96px;
+    top: 36px;
+    right: 80px;
   }
 
   .menu-button {
@@ -108,7 +113,7 @@ const Container = styled.div`
     height: 48px;
     position: absolute;
     border-radius: 50%;
-    background: ${(props) => props.theme.color.main};
+    background: ${(props) => props.theme.color.white};
     overflow: hidden;
     text-decoration: none;
     line-height: 150px;
@@ -124,7 +129,7 @@ const Container = styled.div`
     position: absolute;
     line-height: 5px;
     border-radius: 50%;
-    background-color: ${(props) => props.theme.color.main};
+    background-color: ${(props) => props.theme.color.white};
     transition: transform 0.5s;
     display: flex;
     justify-content: center;

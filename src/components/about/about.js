@@ -5,6 +5,7 @@ import new_me from '../../assets/new_my.jpeg';
 import programming from '../../assets/programming.png';
 
 import Description from './description';
+import SkillSet from './skillSet';
 
 const About = () => {
   const intro = {
@@ -23,12 +24,12 @@ const About = () => {
   const introView = (obj) => {
     return language ? (
       <div className='main'>
-        <span>{obj.en.describe}</span>
+        <span className='desc'>{obj.en.describe}</span>
         <h3>{obj.en.title}</h3>
       </div>
     ) : (
       <div className='main'>
-        <span>{obj.kr.describe}</span>
+        <span className='desc'>{obj.kr.describe}</span>
         <h3>{obj.kr.title}</h3>
       </div>
     );
@@ -36,44 +37,13 @@ const About = () => {
 
   return (
     <Container>
+      <div className='programming-img' />
       {introView(intro)}
       <div className='img-ring'>
         <div className='cartoon-img' />
       </div>
-      <div className='programming-img' />
-      <div
-        style={{
-          fontSize: '0.5rem',
-          color: '#2ed573',
-          textDecoration: 'none',
-        }}
-      >
-        일러스트:{' '}
-        <a
-          href='https://iconscout.com/illustrations/blog-writer'
-          target='_blank'
-          rel='noopener noreferrer'
-          style={{
-            color: '#2ed573',
-            textDecoration: 'none',
-          }}
-        >
-          Blog writer Illustration
-        </a>{' '}
-        by{' '}
-        <a
-          href='https://iconscout.com/contributors/delesign'
-          target='_blank'
-          rel='noopener noreferrer'
-          style={{
-            color: '#2ed573',
-            textDecoration: 'none',
-          }}
-        >
-          Delesign Graphics
-        </a>
-      </div>
       <Description />
+      <SkillSet />
     </Container>
   );
 };
@@ -82,13 +52,11 @@ const Container = styled.div`
   color: ${(props) => props.theme.color.text};
   font-size: 2rem;
   text-align: center;
-  padding-top: 180px;
 
   .main {
     font-weight: 100;
-    margin: 0;
 
-    span {
+    .desc {
       font-size: 1.2rem;
     }
 
@@ -109,7 +77,7 @@ const Container = styled.div`
   }
 
   .img-ring {
-    border: 1px solid ${(props) => props.theme.color.main};
+    border: 2px solid ${(props) => props.theme.color.main};
     width: 230px;
     height: 230px;
     border-radius: 50%;
@@ -119,24 +87,24 @@ const Container = styled.div`
     margin: 54px auto 120px;
 
     &:hover {
-      box-shadow: 0px 0px 4px ${(props) => props.theme.color.main};
+      box-shadow: 0px 0px 8px ${(props) => props.theme.color.main};
     }
   }
 
   .programming-img {
     background-image: url("${programming}");
-    width: 600px;
     height: 300px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center left;
+    background-position: center;
     margin: 0 auto;
   }
 
   @media only screen and (max-width: 959px) {
-    .programming-img {
-      width: 460px;
-      height: 230px;
+    .main {
+      .desc {
+        font-size: 1rem;
+      }
     }
   }
 `;
