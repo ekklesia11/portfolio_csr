@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import new_me from '../../assets/new_my.jpeg';
+import new_me from '../../assets/new_me.png';
 import programming from '../../assets/programming.png';
 
 import Description from './description';

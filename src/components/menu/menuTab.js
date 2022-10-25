@@ -12,7 +12,7 @@ const MenuTab = () => {
       name: 'about',
       link: 'about',
       // location: 'rotate(300deg) translateY(-100px) rotate(60deg)',
-      location: 'translateX(-240px)',
+      location: 'translateX(-180px)',
       timing: '0s',
       icon: faInfoCircle,
     },
@@ -20,7 +20,7 @@ const MenuTab = () => {
       name: 'project',
       link: 'project',
       // location: 'rotate(260deg) translateY(-105px) rotate(100deg)',
-      location: 'translateX(-180px)',
+      location: 'translateX(-120px)',
       timing: '0.1s',
       icon: faBriefcase,
     },
@@ -28,18 +28,18 @@ const MenuTab = () => {
       name: 'contact',
       link: 'contact',
       // location: 'rotate(220deg) translateY(-105px) rotate(140deg)',
-      location: 'translateX(-120px)',
+      location: 'translateX(-60px)',
       timing: '0.2s',
       icon: faEnvelope,
     },
-    {
-      name: 'resume',
-      link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423',
-      // location: 'rotate(180deg) translateY(-100px) rotate(180deg)',
-      location: 'translateX(-60px)',
-      timing: '0.3s',
-      icon: faAddressCard,
-    },
+    // {
+    //   name: 'resume',
+    //   link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423',
+    //   // location: 'rotate(180deg) translateY(-100px) rotate(180deg)',
+    //   location: 'translateX(-60px)',
+    //   timing: '0.3s',
+    //   icon: faAddressCard,
+    // },
   ];
 
   const menuToggler = () => setToggleMenu(!toggleMenu);
@@ -135,7 +135,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.8;
 
     &:hover {
       opacity: 1;

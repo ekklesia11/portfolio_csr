@@ -2,20 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 import server from '../../assets/server.svg';
 import client from '../../assets/client.svg';
+import blueWhale from '../../assets/blue-whale-bg.png';
 
 const SkillSet = () => {
   const skillSet = {
     kr: [
       {
-        position: '백엔드',
-        describe: 'DB 설계와 API, 그리고 안정적인 개발환경 구축, 서비스에 필요한 서버를 개발하고 운영합니다.',
-        stack: ['Node.js', 'Express', 'Python', 'Django', 'AWS', 'MySQL', 'MongoDB', 'Redis', 'DynamoDB', 'Postgres', 'Docker'],
+        position: '백엔드 정비',
+        describe: 'DB 설계와 API, 그리고 안정적인 개발환경 구축, 서비스에 필요한 서버 개발 및 운영',
+        stack: [
+          'Node.js',
+          'Express',
+          'Python',
+          'Django',
+          'AWS',
+          'MySQL',
+          'MongoDB',
+          'Redis',
+          'DynamoDB',
+          'Postgres',
+          'Docker',
+        ],
         img: server,
       },
       {
-        position: '프론트엔드',
-        describe:
-          '기획과 디자인을 시작으로 클라이언트의, 클라이언트에 의한, 클라이언트를 위한 프론트엔드를 개발합니다.',
+        position: '프론트엔드 정비',
+        describe: '기획과 디자인을 시작으로 클라이언트의, 클라이언트에 의한, 클라이언트를 위한 페이지 개발',
         stack: ['JavaScript(ES6+)', 'React', 'Nextjs', 'React-Native', 'HTML', 'CSS'],
         img: client,
       },
@@ -45,7 +57,6 @@ const SkillSet = () => {
         <div className='detail-text'>
           <strong>{data.position}</strong>
           <div className='description'>{data.describe}</div>
-          <div className='title'>{language ? 'stacks' : '기술스택'}:</div>
           <div>
             {data.stack.map((stack) => (
               <div key={stack}>{stack}</div>
@@ -65,10 +76,14 @@ const SkillSet = () => {
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.color.white};
+  background-image: url("${blueWhale}");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   font-size: 2rem;
   font-weight: 100;
   padding-bottom: 84px;
-  
+
   .details {
     margin: 0 auto;
     display: flex;
@@ -83,6 +98,27 @@ const Container = styled.div`
       position: relative;
       width: 40%;
       border-radius: 12px;
+      opacity: 0.6;
+
+      &:hover {
+        cursor: cell;
+      }
+    }
+
+    .detail-0 {
+      transition: ease-out 0.5s;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    .detail-1 {
+      transition: ease-out 0.5s;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
 
     .detail-text {
@@ -92,12 +128,7 @@ const Container = styled.div`
 
       .description {
         width: 80%;
-        margin: 24px auto 0;
-      }
-
-      .title {
-        margin: 48px 0 12px;
-        font-weight: 400;
+        margin: 24px auto;
       }
     }
 

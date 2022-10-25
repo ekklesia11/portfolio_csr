@@ -171,7 +171,7 @@ const Container = styled.div`
     /* margin-bottom: 48px; */
 
     .logo {
-      width: 200px;
+      width: 150px;
       filter: grayscale(1);
       margin: 48px 24px;
 

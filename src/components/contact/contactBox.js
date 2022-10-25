@@ -10,7 +10,7 @@ const ContactBox = () => {
   const contact = [
     { name: 'github', link: 'https://github.com/ekklesia11', icon: Github },
     { name: 'instagram', link: 'https://instagram.com/d_paac', icon: Insta },
-    { name: 'resume', link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423', icon: Resume },
+    // { name: 'resume', link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423', icon: Resume },
     { name: 'email', link: 'mailto:happyyquokka@gmail.com', icon: Email },
   ];
 
@@ -40,7 +40,7 @@ const ContactBox = () => {
           </a>
         ))}
       </div>
-      <div className='copyright'>© 2022 Daniel</div>
+      <div className='copyright'>우리동네 개발자</div>
     </Container>
   );
 };
