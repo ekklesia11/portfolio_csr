@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faInfoCircle, faBriefcase, faEnvelope, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faInfoCircle, faBriefcase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
 import { theme } from '../../common/theme';
 
@@ -32,14 +32,6 @@ const MenuTab = () => {
       timing: '0.2s',
       icon: faEnvelope,
     },
-    // {
-    //   name: 'resume',
-    //   link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423',
-    //   // location: 'rotate(180deg) translateY(-100px) rotate(180deg)',
-    //   location: 'translateX(-60px)',
-    //   timing: '0.3s',
-    //   icon: faAddressCard,
-    // },
   ];
 
   const menuToggler = () => setToggleMenu(!toggleMenu);
@@ -50,51 +42,28 @@ const MenuTab = () => {
         <div className='menu-button' onClick={menuToggler}>
           <FontAwesomeIcon icon={faBars} color={theme.color.background} size='lg' />
         </div>
-        {menus.map((menu) =>
-          menu.name === 'resume' ? (
-            <a
-              className='menu-item'
-              key={menu.name}
-              href={menu.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              style={
-                toggleMenu
-                  ? {
-                      transform: menu.location,
-                      transitionDelay: menu.timing,
-                    }
-                  : {
-                      transform: 'translate(0px, 0px)',
-                    }
-              }
-              onClick={menuToggler}
-            >
-              <FontAwesomeIcon icon={menu.icon} color={theme.color.background} size='lg' />
-            </a>
-          ) : (
-            <Link
-              className='menu-item'
-              key={menu.name}
-              to={menu.link}
-              smooth={true}
-              duration={500}
-              style={
-                toggleMenu
-                  ? {
-                      transform: menu.location,
-                      transitionDelay: menu.timing,
-                    }
-                  : {
-                      transform: 'translate(0px, 0px)',
-                    }
-              }
-              onClick={menuToggler}
-            >
-              <FontAwesomeIcon icon={menu.icon} color={theme.color.background} size='lg' />
-            </Link>
-          )
-        )}
+        {menus.map((menu) => (
+          <Link
+            className='menu-item'
+            key={menu.name}
+            to={menu.link}
+            smooth={true}
+            duration={500}
+            style={
+              toggleMenu
+                ? {
+                    transform: menu.location,
+                    transitionDelay: menu.timing,
+                  }
+                : {
+                    transform: 'translate(0px, 0px)',
+                  }
+            }
+            onClick={menuToggler}
+          >
+            <FontAwesomeIcon icon={menu.icon} color={theme.color.background} size='lg' />
+          </Link>
+        ))}
       </div>
     </Container>
   );

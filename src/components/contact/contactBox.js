@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { ReactComponent as Github } from '../../assets/github-icon.svg';
-import { ReactComponent as Resume } from '../../assets/address-card-solid.svg';
+import { ReactComponent as Blog } from '../../assets/blog-icon.svg';
 import { ReactComponent as Insta } from '../../assets/insta-icon.svg';
 import { ReactComponent as Email } from '../../assets/email-icon.svg';
 
 const ContactBox = () => {
   const contact = [
     { name: 'github', link: 'https://github.com/ekklesia11', icon: Github },
-    { name: 'instagram', link: 'https://instagram.com/d_paac', icon: Insta },
-    // { name: 'resume', link: 'https://warp-iguanodon-bdc.notion.site/774d91a896cb416ab71533f6cdb2a423', icon: Resume },
+    { name: 'instagram', link: 'https://instagram.com/hometowndeveloper', icon: Insta },
+    { name: 'blog', link: 'http://blog.hometowndeveloper.com', icon: Blog },
     { name: 'email', link: 'mailto:happyyquokka@gmail.com', icon: Email },
   ];
 
@@ -32,7 +32,7 @@ const ContactBox = () => {
         {contact.map((data) => (
           <a href={data.link} target='_blank' rel='noopener noreferrer' key={data.name}>
             <data.icon
-              fill={data.name === 'github' || data.name === 'resume' ? '#f1f2f6' : 'none'}
+              fill={data.name === 'github' || data.name === 'blog' ? '#f1f2f6' : 'none'}
               stroke='#f1f2f6'
               width='24px'
               height='24px'
