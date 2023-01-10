@@ -1,110 +1,126 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import new_me from '../../assets/new_me.png';
-import programming from '../../assets/programming.png';
+import me from '../../assets/clear_me.png';
 
 import Description from './description';
-import SkillSet from './skillSet';
 
 const About = () => {
-  const intro = {
-    kr: {
-      title: '백엔드 개발자',
-      describe: '열정적이고 즐겁게, 단순하지만 확실하게 개발하는',
-    },
-    en: {
-      title: 'Backend Developer',
-      describe: 'I code simple and modern things, and I love what I do.',
-    },
-  };
-
-  let language = 0;
-
-  const introView = (obj) => {
-    return language ? (
-      <div className='main'>
-        <span className='desc'>{obj.en.describe}</span>
-        <h3>{obj.en.title}</h3>
-      </div>
-    ) : (
-      <div className='main'>
-        <span className='desc'>{obj.kr.describe}</span>
-        <h3>{obj.kr.title}</h3>
-      </div>
-    );
-  };
-
   return (
     <Container>
-      <div className='programming-img' />
-      {introView(intro)}
-      <div className='img-ring'>
-        <div className='cartoon-img' />
+      <div className='top-intro'>
+        <div className='brief'>
+          <h3>Daniel Park</h3>
+          <div className='desc'>
+            Seoul based Software Engineer
+            <br />
+            and love what I do
+          </div>
+          <div className='skill'>
+            <div>main language:</div>
+            <div>Nodejs</div>
+            {/* <div>Python</div> */}
+          </div>
+        </div>
+        <div className='profile' />
       </div>
       <Description />
-      <SkillSet />
     </Container>
   );
 };
 
 const Container = styled.div`
-  color: ${(props) => props.theme.color.text};
-  font-size: 2rem;
+  color: #fff;
   text-align: center;
 
-  .main {
-    font-weight: 100;
-
-    .desc {
-      font-size: 1.2rem;
-    }
-
-    h3 {
-      margin: 8px 0;
-    }
-  }
-
-  .cartoon-img {
-    background-image: url("${new_me}");
-    border: 1px solid #fff;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .img-ring {
-    border: 2px solid ${(props) => props.theme.color.main};
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
+  .top-intro {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 54px auto 120px;
+    height: 70vh;
 
-    &:hover {
-      box-shadow: 0px 0px 8px ${(props) => props.theme.color.main};
+    .brief {
+      flex: 1;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: right;
+
+      h3 {
+        margin: 0 36px;
+        padding: 0;
+        font-size: 72px;
+        line-height: 64px;
+      }
+
+      .desc {
+        margin-top: 36px;
+        margin-right: 36px;
+        font-size: 24px;
+        border-left: 4px solid #fff;
+        padding-left: 24px;
+      }
+
+      .skill {
+        display: flex;
+        gap: 12px;
+        font-style: italic;
+        margin-top: 72px;
+        margin-right: 36px;
+        font-size: 18px;
+      }
     }
-  }
 
-  .programming-img {
-    background-image: url("${programming}");
-    height: 300px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 auto;
+    .profile {
+      flex: 1;
+      background-color: #fff;
+      background-image: url('${me}');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
   }
 
   @media only screen and (max-width: 959px) {
-    .main {
-      .desc {
-        font-size: 1rem;
+    .top-intro {
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .profile {
+      background-size: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 439px) {
+    .top-intro {
+      flex-direction: column;
+      height: 100vh;
+
+      .brief {
+        h3 {
+          font-size: 48px;
+          line-height: 36px;
+          margin-right: 18px;
+        }
+
+        .desc {
+          margin-top: 36px;
+          margin-right: 18px;
+          font-size: 18px;
+          border-left: 3px solid #fff;
+          padding-left: 12px;
+        }
+
+        .skill {
+          font-size: 16px;
+          margin-right: 18px;
+        }
       }
+    }
+
+    .profile {
+      background-size: 100%;
     }
   }
 `;

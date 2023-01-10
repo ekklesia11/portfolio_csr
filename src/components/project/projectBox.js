@@ -8,11 +8,24 @@ import bbegi from '../../assets/bbegi.png';
 import cashwalk from '../../assets/cashwalk.png';
 import futureplay from '../../assets/futureplay.png';
 import pumpkinmelon from '../../assets/pumpkinmelon.jpeg';
+import { ReactComponent as gatda } from '../../assets/gatda.svg';
 
 const project = [
   {
-    title: '캐시워크',
-    description: ['세부 서비스별 기능', '서버 개발'],
+    title: 'FuturePlay',
+    description: ['Backend engineer', 'Tech team'],
+    roles: [
+      'Node 및 Lambda cron server 개발',
+      'Web crawler 개발',
+      'Redis, DynamoDB, Athena(firehose) 를 활용한 랭킹 API 개발',
+    ],
+    stacks: ['#Nodejs', '#AWS', '#React', '#Nextjs'],
+    images: futureplay,
+    link: '',
+  },
+  {
+    title: 'Nudge Healthcare',
+    description: ['Backend/Frontend engineer'],
     roles: [
       'Node 및 Lambda cron server 개발',
       'Web crawler 개발',
@@ -92,6 +105,45 @@ const project = [
   },
 ];
 
+const company = [
+  {
+    title: 'FuturePlay',
+    description: 'Backend engineer',
+    roles: [
+      'Node 및 Lambda cron server 개발',
+      'Web crawler 개발',
+      'Redis, DynamoDB, Athena(firehose) 를 활용한 랭킹 API 개발',
+    ],
+    stacks: ['#Nodejs', '#AWS', '#React', '#Nextjs'],
+    images: futureplay,
+    link: '',
+  },
+  {
+    title: 'Nudge Healthcare',
+    description: 'Backend/Frontend engineer',
+    roles: [
+      'Node 및 Lambda cron server 개발',
+      'Web crawler 개발',
+      'Redis, DynamoDB, Athena(firehose) 를 활용한 랭킹 API 개발',
+    ],
+    stacks: ['#Nodejs', '#AWS', '#React', '#Nextjs'],
+    images: cashwalk,
+    link: '',
+  },
+  {
+    title: 'Gatda Corp.',
+    description: 'Backend/Frontend engineer',
+    roles: [
+      'React 및 pure javascript function 으로 구성된 타이머',
+      'Basic static webapp 구현',
+      'AWS CloudFront 를 활용한 https 인증서 구현',
+    ],
+    stacks: ['#React', '#Javascript', '#AWS S3', '#Route53', '#CloudFront'],
+    images: gatda,
+    link: 'https://timer.talab.pro',
+  },
+];
+
 const companyLogos = [futureplay, cashwalk, pumpkinmelon, talab, bbegi, secondhand, lunchgogo];
 
 const ProjectBox = () => {
@@ -111,9 +163,6 @@ const ProjectBox = () => {
               ))}
             </div>
             <div className='stack'>{obj.stacks.join(' ')}</div>
-            {/* <a className='button' href={obj.link} target='_blank' rel='noopener noreferrer'>
-              페이지 이동하기
-            </a> */}
           </div>
         </div>
       </Card>
@@ -123,13 +172,16 @@ const ProjectBox = () => {
   return (
     <Container>
       <div className='inner-container'>
-        <h1>함께한 기업 및 프로젝트</h1>
         <div className='logos'>
-          {companyLogos.map((logo, i) => (
-            <img key={i} src={logo} alt='' className='logo' />
+          {company.map((com, i) => (
+            <div>
+              <div className='title'>{com.title}</div>
+              <div className='role'>
+                <div>{com.description}</div>
+              </div>
+            </div>
           ))}
         </div>
-        {/* <div className='project-layout'>{project.map((data) => projectCard(data))}</div> */}
       </div>
     </Container>
   );
@@ -137,57 +189,38 @@ const ProjectBox = () => {
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.color.main};
-  color: ${(props) => props.theme.color.textInverse};
+  color: #000;
   position: relative;
   text-align: center;
-  padding: 84px 0;
-  width: 100%;
+  padding: 72px 0;
 
   .inner-container {
-    width: 80%;
     margin: 0 auto;
-  }
-
-  h1 {
-    margin-top: 0;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 56px;
-  }
-
-  .project-layout {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
   }
 
   .logos {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
-    /* margin-bottom: 48px; */
 
-    .logo {
-      width: 150px;
-      filter: grayscale(1);
-      margin: 48px 24px;
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-      &:hover {
-        filter: grayscale(0);
-      }
+    .role {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
     }
   }
 
-  @media only screen and (max-width: 700px) {
-    h1 {
-      font-size: x-large;
-    }
-
-    p {
-      font-size: 1rem;
+  @media only screen and (max-width: 959px) {
+    .inner-container {
+      .logos {
+        flex-direction: column;
+        gap: 48px;
+      }
     }
   }
 `;

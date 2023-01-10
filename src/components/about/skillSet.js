@@ -13,42 +13,55 @@ const SkillSet = () => {
         stack: [
           'Node.js',
           'Express',
-          'Python',
-          'Django',
           'AWS',
+          'AWS CDK',
+          'Docker',
           'MySQL',
           'MongoDB',
           'Redis',
           'DynamoDB',
           'Postgres',
-          'Docker',
+          'Python',
+          'Django',
         ],
         img: server,
       },
       {
         position: '프론트엔드 정비',
         describe: '기획과 디자인을 시작으로 클라이언트의, 클라이언트에 의한, 클라이언트를 위한 페이지 개발',
-        stack: ['JavaScript(ES6+)', 'React', 'Nextjs', 'React-Native', 'HTML', 'CSS'],
+        stack: ['JavaScript(ES6+)', 'React', 'Nextjs', 'React-Native', 'HTML', 'CSS', 'Hasura'],
         img: client,
       },
     ],
     en: [
       {
         position: 'Backend',
-        describe: 'For server side coding',
-        stack: ['Node.js', 'Express', 'Python', 'Django', 'MySQL', 'MongoDB', 'AWS'],
+        describe: 'Architect of database, infrastructure and APIs for server',
+        stack: [
+          'Node.js',
+          'Express',
+          'AWS',
+          'Docker',
+          'MySQL',
+          'MongoDB',
+          'Redis',
+          'DynamoDB',
+          'Postgres',
+          'Python',
+          'Django',
+        ],
         img: server,
       },
       {
         position: 'Frontend',
-        describe: 'For client side coding',
-        stack: ['JavaScript(ES6+)', 'React', 'React-Native', 'HTML', 'CSS'],
+        describe: 'Developer of the client, by the client, and for the client',
+        stack: ['JavaScript', 'React', 'Nextjs', 'React-Native', 'HTML', 'CSS', 'Hasura'],
         img: client,
       },
     ],
   };
 
-  let language = 0;
+  let language = 1;
 
   const stackView = (obj) => {
     return obj[language ? 'en' : 'kr'].map((data, i) => (
@@ -75,8 +88,8 @@ const SkillSet = () => {
 };
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.color.white};
-  background-image: url("${blueWhale}");
+  background-color: ${(props) => props.theme.color.background};
+  background-image: url('${blueWhale}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
