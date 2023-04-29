@@ -31,12 +31,12 @@ const Description = () => {
           <div className='desc'>
             Every engineer creates or modifies a <b>system</b> that helps any kind of business, and synchronizes those
             systems together perfectly. Programming is not the only part I care about, but what, when and how the system
-            <b> handles problems and obstacles</b> that we are facing;
+            <b> handles problems and obstacles</b> that we are facing.
             <br />
             <br />
             So several years of my work was on the <b>architecture of the infrastructure, database and APIs</b>, and
             also <b>client webpages and in-house systems</b>, collaborating with talented people and striving to improve
-            my skills at all times;
+            my skills at all times.
           </div>
         </div>
       </div>

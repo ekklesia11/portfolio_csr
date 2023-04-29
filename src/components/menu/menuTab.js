@@ -38,7 +38,14 @@ const MenuTab = () => {
     <Container>
       <div className='menu'>
         {menus.map((menu) => (
-          <Link className='menu-item' key={menu.name} to={menu.link} smooth={true} duration={500} onClick={menuToggler}>
+          <Link
+            className='menu-item'
+            key={menu.name}
+            to={menu.link}
+            smooth={true}
+            duration={500}
+            onClick={menuToggler}
+          >
             {menu.name.toUpperCase()}
           </Link>
         ))}
@@ -66,7 +73,8 @@ const Container = styled.div`
   @media only screen and (max-width: 959px) {
     .menu-item {
       background-color: #000;
-      padding: 0 4px;
+      padding: 4px 8px;
+      border-radius: 8px;
     }
 
     color: #fff;
